@@ -14,7 +14,7 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
-import { signal } from "@preact-signals/safe-react";
+import { useSignal } from "@preact-signals/safe-react";
 
 const items: MenuProps["items"] = [
   UserOutlined,
@@ -31,9 +31,9 @@ const items: MenuProps["items"] = [
   label: `nav ${index + 1}`,
 }));
 
-const collapse = signal<boolean>(true);
-
 const TestComponent = () => {
+
+  const collapse = useSignal<boolean>(true);
 
   const mouseEnter = () => {
     collapse.value = false;
