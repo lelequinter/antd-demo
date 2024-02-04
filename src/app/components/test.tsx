@@ -15,7 +15,6 @@ import {
   VideoCameraOutlined,
 } from "@ant-design/icons";
 import { signal } from "@preact-signals/safe-react";
-import { useSignals } from "@preact-signals/safe-react/tracking";
 
 const items: MenuProps["items"] = [
   UserOutlined,
