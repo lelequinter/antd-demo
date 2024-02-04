@@ -14,6 +14,8 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from "@ant-design/icons";
+import { signal } from "@preact-signals/safe-react";
+import { useSignals } from "@preact-signals/safe-react/tracking";
 
 const items: MenuProps["items"] = [
   UserOutlined,
@@ -30,13 +32,16 @@ const items: MenuProps["items"] = [
   label: `nav ${index + 1}`,
 }));
 
+const collapse = signal<boolean>(true);
+
 const TestComponent = () => {
+
   const mouseEnter = () => {
-    console.log("mouse enter");
+    collapse.value = false;
   };
 
   const mouseLeave = () => {
-    console.log("mouse leave");
+    collapse.value = true;
   };
 
   return (
@@ -44,7 +49,7 @@ const TestComponent = () => {
       <Sider
         trigger={null}
         collapsible
-        collapsed={true}
+        collapsed={collapse.value}
         onMouseEnter={mouseEnter}
         onMouseLeave={mouseLeave}
         style={{

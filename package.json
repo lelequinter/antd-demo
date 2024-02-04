@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@preact-signals/safe-react": "^0.5.2",
     "antd": "^5.13.3",
     "next": "14.1.0",
     "react": "^18",
